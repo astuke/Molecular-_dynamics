@@ -1,10 +1,10 @@
-rng(13); % set the random number seed to avoid demo effects ;-)
+rng(13); 
 % MD at constant energy
 close all
-N=20; % Number of particles (20=> 1 7 12)
+N=20; % Number of particles 
 r=randn(N,2); % positions, 2D system
 v=randn(N,2); % velocities, 2D system
-temperature=0.1; % This only scales now the initial velocities [.15]
+temperature=0.1; % scales the initial velocities [.15]
 options = optimoptions(@fminunc,'GradObj','on','Algorithm','trust-region');
 r = fminunc(@md_potential,r,options); % minimize the potential
 
